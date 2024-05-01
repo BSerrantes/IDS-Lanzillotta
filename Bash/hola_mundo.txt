@@ -1,3 +1,0 @@
-echo "Hola mundo"
-esto es una linea de texto ?
-
