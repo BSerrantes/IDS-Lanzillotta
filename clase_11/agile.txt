@@ -1,0 +1,114 @@
+project scope
+la calidad depende del tiempo-costo-scope
+calendario-esfuerzo-alcance
+el alcance(scope) sería el trabajo a realizar pedido por el cliente
+para ayudar a que las diferencias entre lo que pide el cliente y lo que se puede realizar, usamos las herramientas de agilidad.
+El mercado nos demanda:
+Bajo costo / Alta calidad / Diferenciación
+esto requiere : velocidad + flexibilidad
+
+----SCRUM----
+Scrum es un proceso ágil que nos permite centrarnos en ofrecer el más alto valor de negocio en el menor tiempo.
+Nos permite rápidamente y en repetidas ocaciones inspeccionar el producto/servicio real de trabajo(cada dos semanas o en u mes).
+
+El negocio fija las prioridades. Los equipos se auto-organizan a fin de determinar la mejor manera de entregar las funcionalidades de más alta prioridad.
+Cada dos semanas o en un mes, cualquiera puede ver lo que generamos funcionando y decidir si liberarlo o seguir mejorándolo en otro sprint.
+
+Proceso simple que requiere mucha disciplina para que resulte exitoso.
+
+Característas---
+ Equipos auto-organizados
+ El producto avanza en una serie de sprints en tiempo determinado.
+Los requisitos son capturados como elementos de una lista de PRODUCT BACKLOG
+No hay prácticas de ingeniería prescritas
+Utiliza normas generativas para crear un entorno ágil para la entrega de proyectos
+
+----------
+Es mejor usar el modelo iterativo e incremental ya que nos permite entregar el producto en versiones básicas e ir mejorándolo en cada sprint hasta llegar al producto final pedido por el cliente.
+Ejemplo boludo... -> si el cliente quiere un auto no armo el auto desde cero sino que le voy dando opcione spara que se pueda movilizar.
+Primero una patineta, después un scooter, luego una bici... y así hasta llegar al auto.
+
+Desarrollo del scrum
+
+Product backlog
+reunión de planificación
+Sprint backlog
+reunión diaria para comprobar el estado del desarrollo
+sprint(2-4 semanas)
+Una vez desarrollado el producto se realiza una reunión de revisión y finalmente una de retrospecctiva.
+
+NO SE PUEDEN REALIZAR CAMBIOS DURANTE UN SPRINT
+durante el sprint solo se puede realizar lo predifinido
+
+----------------
+
+Product backlog (bolsa de tareas)
+Es una lista  de todo lo necesario para concluir con el proyecto y es priorizada por el product owner.
+
+Se puede tener una lista típica o un tablero Kanban.
+Un tablero puede tener las etapas que uno requiera.
+Uno básico sería:
+Pendiente|En curso|Terminado|Objetivo de sprint
+tarea1
+tarea2
+...
+..
+tareaX
+
+Roles::Procuct owner.
+ Define las funcionalidades del producto. Es responsable por la rentabilidad del producto(ROI) 
+Prioriza funcionalidades de acuerdo al valor del mercado/negocio Ajusta funcionalidades y prioridades en cada 
+iteración si es necesario. Acepta o rechaza los resultados del trabajo del equipo.
+
+Roles::ScrumMaster.
+ Representa a la gestión del proyecto. Responsable de promover los valores y prácticas del scrum. 
+Remueve impedimentos. Se asegura de que el equipo es completamente funcional y productivo. Permite la estrecha 
+cooperacion en todos los roles y funciones. Escudo del equipo de interferencias externas.
+
+Roles::Team.
+ Multi-funcional(Programadores-Testers-Analistas-Diseñadores,etc). Los miembros deben ser full-time. Los 
+equipos son auto-organizativas. Solo puede haber cambio de miembros entre los sprints.
+
+Estimación::unidad de medida.
+ La estimación no es algo lineal, y para eso tenemos que tener un patrón de medida que 
+nos va a servir para estimar el tiempo que nos va a llevar el desarrollo del trabajo. Un ejemplo puede ser 
+establecer un sistema de puntos según el esfuerzo que pueda tomar.
+1pto - small- no sweat
+3pts- medium- nothing we can´t handle
+5pts- large - this is going to take some effort
+
+Estimación::Planning pocket.
+Es un juego dentro del equipo que nos permite estimar.
+Se tienen tarjetas con números que representan puntos dependiendo del tamaño de la tarea.
+Cada participante tiene una tarjeta donde coloca lo que cree que esa tarea vale.
+Se muestran todas las tarjetas
+Si las estimaciones son similares -> se toma esa estimación.
+Caso contrario se discuten los puntos de vista y se vuelve a estimar.
+
+Retrospectiva del Scrum::
+Acuden el equipo y el scrumMaster y opcionalmente el product owner.
+Todos los miembros responden a dos preguntas:
+	Que cosas fueron bien el último sprit?
+	Qué cosas se podrían mejorar?
+El scrum Master anota todas las respuestas y el equipo prioriza las mejoras posibles.
+El scrum manager no proporciona respuestas, sino que ayuda al equipo a encontrar la mejor forma de trabajar con scrum.
+
+Retrospectiva del Scrum::Kanban.
+se puede hacer una retrospectiva usando el tablero kanban -> Bien|Mejorable|Mejoras
+
+Kanban::Qué es.
+ Dividir el trabajo en partes, escribir cada elemento en una tarjeta y poner en la pared. Utilizar 
+columnas nombradas para ilustrar que cada elemento está en el flujo de trabajo. LimitWork in Progress(WIP), asignar 
+límites explícitos sobre cómo muchas historias podrían estar en curso en cada estado del flujo de trabajo. Medir el 
+lead time(tiempo promedio para cumplir una tarea, conocido como "tiempo de ciclo"), optimizar el proceso de forma de 
+hacer el tiempo desperdiciado tan pequeño y predecible posible.
+
+Flow -> línea de trabajo.
+TO DO | DEV | TEST | RELEASE | DONE!
+
+Herramientas:
+Jira
+Trello
+asana
+Azure DevOps
+Basecamp
