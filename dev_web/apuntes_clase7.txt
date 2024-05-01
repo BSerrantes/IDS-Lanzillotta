@@ -1,0 +1,217 @@
+Temas{
+
+	Javascript
+	Integración con HTML y CSS
+	Ejemplos y ejercitación con Flask
+}
+
+---Javascript---
+lenguaje interpretado
+se utiliza para añadir interactividad a las web pages
+permite crear animaciones y cosas dinámicas y etc etc.
+Es también utilizado conmo lenguaje para el backend, a traves de apps como Node.js
+
+- Podemos usar VSCODE para practicar JS instalando Node.js y la extensión Code Runner.
+- En esta cátedra se explica JS con el std EcmaScript2015(ES6)
+- El punto y coma al final de cada instrucción es optativo
+***
+Variables y constantes
+
+const PI = 3.14 --> constante
+let alumnosCursando = 237 --> variable 
+alumnosCursando = 122 --> reasignación de variable
+
+var algo = otraCosa --> el uso de var está PROHIBIDO, es como una variable global
+las constantes en javascript van en Camel case
+para configs y algunas otras cosas usamos el típico 
+const ALUMNOS_CURSANDO = 12
+***
+Tipos de datos
+
+const alumenos = 237 // number
+const precio = 1392 // number
+const nombre = "Bruno" // string
+const esDomingo = False // boolean
+
+const persona = {nombre: "pepe", edad:26} --> es una clase con atributos definidos, muy parecido a un struct en C o mejor a un diccionario en Python.
+const numeros = [1,2,3] //object
+let valorInicial = null //object
+
+const ultimoDigitoDePi = undefined // undefined
+
+javascript tiene tipo de varible dinámico
+a cualquier varible que diga LET le puedo cambiar el tipo de dato, pero se recomienda que la variable se mantenga consistente en su tipo. O sea, si arrancamos con number termino con number. Esto puede solucionarse inicializando la variable con:
+let variable = undefined
+
+***
+Estructuras de Control
+
+if(numero < 20){
+	
+}
+else if(numero == 20){
+	
+}
+else{
+	console.log(...)
+}
+
+----
+
+while(numero < 20){
+	numero++
+}
+
+for(let i = 1; i < 5; <i++){
+	const nuevoValor = numero + i
+	console.log("Ahora el numero vale: " + nuevoValor)
+}
+
+muy parecido a C/C++
+
+***
+
+const color = "red"
+
+switch(color){
+	case "red":{
+		console.log("El color es rojo")
+		break
+	}
+	case "blue":{
+		console.log("El color es azul")
+	}
+	case "yellow":{
+		console.log("El color es amarillo")
+	}
+	default:{
+		console.log("El color no existe")
+	}
+}
+
+recorrer una lista --<
+
+const alumnos = ["pala","martin","lucas"]
+
+for(const alumno of alumnos){
+	console.log(alumno)
+}
+
+const alumno = {
+	nombre : "pala",
+	edad: 23
+}
+
+for(prop in alumno){
+	console.log(prop,":",alumno[prop])
+}
+alumno[prop] va tomando los valores de los atributos
+es como cuando quiero acceder a una posición de un vector, pero en este caso el iterador es prop.
+
+si quisiera que sea un diccionario uso comillas en los nombres de los atributos
+
+para declarar funciones uso la palabra reservada function suma(x,y){return x+y}
+
+//funcion flecha o arrow function
+//(args) => returnvalue
+const suma = (x,y) => x+y
+
+esto es algo parecido a funciones lambda de python pero más simple
+
+en javascript las funciones tambien son un tipo de dato!
+
+una funcion simple se puede hacer en una sola linea con arrow fx
+console.log( ( (x,y) => x+y ) (2,3) )
+de esta manera vemos como se puede declarar y el resultado es el 5
+javascript es multiparadigma
+por lo tanto tenemos objetos y resultados del paradigma funcional
+*****
+API Requests
+
+const PokemonURL = "https..."
+
+fetch(PokemonURLs)
+	.then(response => response.json())      //son tipos de dato promise
+	.then(json => console.log(json))
+
+*****
+DOM:(document object model)
+	Interfaz de programacion para representar HTML como objetos en JS.
+	Permite la manipulación de nuesta página web a través del código.
+	Cada elemento HTML es un objeto en JS
+	cada atributp de ese elemento HTML es una propiedad de ese objeto en JS
+	Los elementos HTML responden a eventos. Esos eventos en JS se representan como funciones asignadas al objeto.
+
+	¿Cómo se usa DOM?
+	ej: obtener el contenido del segundo párrafo
+
+	HTML:
+		<p> Hola mundo! </p>
+		<p>¡Aguante Fiuba! </p>
+
+
+	En JavaScript:
+		const parrafos = document.getElementsByTagName("p")
+		//esto genera una lista de los párrafos definidos en mi HTML//
+		const textoParrafo2  = parrafos[1].innerText
+		//acá accedo al segundo párrafo de la lista generada anteriormente//
+		console.log(textoParrafo2)
+
+		"¡Aguante Fiuba!"
+
+
+	Algunas funciones y props básicas del DOM
+		document.getElementsByTagName(...)
+		document.getElementsById(...)
+		document.getElementsByClassName(...)
+		document.createElement(...)
+		document.body
+
+		elemento.append(...)
+		elemento.appendChild(...)
+
+		elemento.innerText
+		elemento.innerHTML
+		elemento.style
+		elemento.parentElement
+
+	cualquier cosa verificar en Google cómo puedo hacer estas funciones
+
+Eventos: nuestra página responde a acciones del usuario
+
+	para definir la respuesta a un determinado evento de nuestra webpage, necesitamos:
+
+	Un objeto DOM que "escuche el evento"
+	una función asignada a ese objeto que realice una acción cada vez que el objeto reciba una señal de ese evento
+
+	-> Escuchando un evento
+		HTML:
+			<button id="alerta">Pulse aquí!</button>
+		JavaScript:
+			const botonAlerta= document.getElementsById("alerta")
+			const mostrarAlerta= function(event){alert("Hola Mundo!")}
+			botonAlerta.addEventListener("click",mostrarAlerta)
+
+			las funciones que realizan eventos por lo general no devuelven nada!
+			serían simplemente procedimientos o void
+
+
+		con la etiqueta <script> añado las funcionalidades
+
+		ej: en el html
+			<script>
+				funcion fx
+				fx
+				..
+			</script>
+
+	-> Importanto scripts en nuestra página web
+		la etiqueta va dentro de <body>
+		y  se puede usar de manera directa con las funciones ahí ooo también se puede dar la ruta de un archivo.js en donde van a estar mis funciones declaradas.
+		<body>
+
+			<script src="../script.js"></script>
+
+		</body>
+
+		Ojo que poner muchos scripts ralentiza el rendimiento de la página.

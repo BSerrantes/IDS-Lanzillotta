@@ -1,0 +1,30 @@
+PARCIAL INTRODESOFT -> 2 DE MAYO DEL 2024
+
+gdb debugger
+
+gcc programa.c -o programa -g 
+con -g le decimos al compilador que nos prepare el archivo para debugear
+luego volvemos a compilar
+gdbtui programa
+gdb -tui programa
+
+
+--comandos--
+
+run ->
+continue ->
+step -> 
+show -> te muestra la variable por única vez
+display -> te muestra el valor de la variable a lo largo del debugging
+set -> setea un valor dado a una varible que elijas
+
+
+backtrace|bt|bractrace full -> Nos muestra donde estamos parados e incluso nos puede mostrar valor de variables.
+
+
+otros debuggers
+
+Pdb -> python debugger
+python3 -m pdb ejemplo.py
+comando para ver -> long list o list
+breakpoint linea -> para setear el brkp en alguna linea de interés

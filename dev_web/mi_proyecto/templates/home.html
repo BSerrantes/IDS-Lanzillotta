@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+    <h1>Hola Mundo!!</h1>
+    <h3>Los nombres son:
+        <ul>
+            {% for nombre in nombres %}
+                {{nombre}}
+                </br>
+            {% endfor %}
+        </ul>
+    </h3>
+    <h3>
+        <a href="{{ url_for('perfil') }}">Link</a>
+    </h3>
+</html>

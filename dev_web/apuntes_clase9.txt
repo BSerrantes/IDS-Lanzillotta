@@ -1,0 +1,23 @@
+TEST DRIVEN DEVELOPMENT
+
+Es una forma de programar:
+	Primero escribir los requisitos del software.
+	Luego este proceso convierte los requisitos del soft en casos de prueba antes de que el software esté completamente desarrollado.
+	Las pruebas desarrolladas son ejecutadas repetitivamente.
+
+	Pasos a seguir para TDD:
+		Agregar una prueba.
+		Correr todas las pruebas y ver que la nueva falla.
+		Cambiar el código para que la prueba agregada efectivamente pase.
+		Correr todas las pruebas y ver que todas se ejecutan correctamente.
+		Refactorizar el código si es necesario.
+
+		Ej perro que ladra
+
+		class TestPerro(unittest.TestCase):
+			def test_perro_ladra(self):
+				perro = Perro()
+				self.assertEqual(perro.ladrar(), "Woof!")
+
+		así se declara una prueba, y si en la siguiente prueba fallara, deberíamos cambiar el código para que funcione como se espera.
+		Finalmente testeo otra vez y veo si pasan las pruebas dadas.

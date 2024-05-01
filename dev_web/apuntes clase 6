@@ -1,0 +1,98 @@
+<div> para dividir el contenido en partes con significado distinto
+<p> para parrafos
+<img> pra añadir imagenes
+<a> para enlaces
+<br> salto de linea
+<span> para estilizar una parte del texto
+<form> <input> <button> <label> pra formularios
+hay alrededor de 190+ etiquetas, y solo hay que leer la documentación para usarlos
+---Atributos---
+<a href="http://google.com"> Ir a Google </a>
+href es el atributo --> siempre va dentro de la etiqueta de apertura
+y el enlace es el valor.
+class y id me permiten aplicar estilos--
+<ul> -> unordered list 
+<li> lista
+<ol> ordered list
+<footer> es el pie de página
+	<p>..
+	<p>..
+</footer>
+
+CSS -> lenguaje de hojas de estilo, sirve para dar estilo a los elementos que ya fueron previamente indicados
+otros lenguajes de estilo son XSL y Sass.
+
+Estructura básica
+
+selector{
+	atributo: valor;
+}
+
+selector: elementos a los cuales les quiero aplicar estilo.
+atributo: característica visible o propiedad que quiero modificar.
+valor: magnitud, cantidad o tipo del estilo que quiero aplicar.
+
+####
+Selector por ID(#)
+selector por clase(.)
+selector por etiqueta o tipo(ej.body)
+selector por atributo([attr=value])
+selector por pseudo-clase(:)
+selector universal(*)
+####
+
+Atributos: se refieren a la característica visible o estructural que queremos modificar de un elemento.
+
+####
+algunos atr básicos son:
+Textos: font-family, font-size, font-style, color
+Elementos: display, padding, margin, border-radius. width, height, opacity, flex
+y muuuchos más...
+####
+
+Cómo insertar CSS a una página web:
+
+-Inline: inserto el estilo directamente como atributo del HTML.
+-Dentro del HTML: etiqueta <style> dentro de la cabecera del documento.
+-Desde un archivo CSS:
+La forma recomendada es -->  <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> para linkear usando flask y buscar dentro de la carpeta static,
+ya que en esa carpeta deberían estar las imágenes de fondo y el arhivo.css.
+
+selector:hover -> cuando le paso el mouse por encima(es un estado)
+
+li:hover, button:hover{
+	transform: scale(1.1);
+	transition-timing-function;
+	...
+	etc
+	...
+	## estos son ejemplos de estilos que voy a aplicar a los selectores.
+}
+se pueden combinar elementos con estado con elementos sin estado--
+@import(url)--> el url fuente que nos escupe google para obtener una fuente.
+
+para que l contenido sea constante con las redimensiones de la ventana y se mantenga a una buena escala uso--
+@media(max-width){
+	.titulo{
+		font-size: 1.5em;
+	}
+	#productos{
+		...
+	}
+	etc..
+	...
+}
+todo esto lo tendriamos que calcular nosotros...
+
+<!-- Comentarios en css html-->
+
+
+
+
+
+
+
+
+

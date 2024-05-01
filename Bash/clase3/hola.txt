@@ -1,0 +1,4 @@
+Texto de prueba para mostrar en el script
+****
+ahora lo modifiqué con el script
+

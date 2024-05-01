@@ -1,0 +1,68 @@
+Modificación de las url::Links
+	toda referencia a links dentro del sitio o cualquier redirección se deberá crear mediante:
+		url_for('user', name = 'john',_external = True)
+		esto esquivale a :
+			http://localhost:5000/user/john
+
+		_external = True crea la dirección absoluta, ideal cuando necesitamos enviar un link por mail por ejemplo.
+
+ 	toda ref a recursos estáticos como ser archivos Js, png, css, etc se deberá crear mediante:
+ 		url_for('static', filename='css/styles.css', _external = True)
+
+ 		El primer parámetro static hará referencia a la carpeta static y luego filename informará a la carpeta y el archivo particular a acceder.
+
+Reutilización de código HTML::Block
+con algunas sintaxis de {{%block}} podemos reutilizar código de un archivo html en otro.
+{%block header%}
+	todo lo que esté definido dentro de del bloque va a ser reutilizado cuando lo llamemos
+{%enblock}
+
+para la utilizacion de los bloques es necesario crear un archivo base.html y dejarlo como un template
+
+....
+
+Creación de un formulario en HTML
+	En este curso vamos a utilizar los métodos tradicionales de etiquetas <form> y métodos POST para enviar la información, a pesar de tener flask...
+
+	En el POST la información viaja en el cuerpo de la petición y en un método get viajaría en la url.
+
+	<form action="{{ url_for('example2')}}" method="post">
+		<label for="firstname">firstname:</label>
+		<input type="text" id="firstname" name="fname" placeholder="firstname">
+		<label for="lastname">Last Name:</label>
+		<input type="text" id="lastname" name="lname" placeholder="lastname">
+		</br>
+		<button type="submit">Login</button>
+
+	</form>
+
+	action => indicará el form-handler, en general es el script del lado del server.
+
+	button submit => define el botón que enviará info al form-handler del lado del server.
+
+Definición de form-handler(lado servidor)
+
+	@app.rout('example2', methods =["GET","POST"])
+	def example2():
+		if request.method =="POST":
+			nombre = request.form.get("fname")
+			return redirect(url_for("show", nombre=nombre))
+
+		return render_template("example2.html")
+
+Si recibimos información con el método POST, entonces redirigimos a un sitio de respuesta, sino volvemos a mostrar el form
+
+
+--- Sobre Endpoints ---
+El punto final es la ubicación de los recursos que una aplicación solicita a otra. Si no hay ningún punto final, el sistema no puede devolver una respuesta. Muchas empresas utilizan las API para compartir información de forma gratuita con otras empresas, aplicaciones y sistemas.
+
+----
+ErrorHandler
+
+flask posee un manejador de errores, esto lo que hace es capturar el error y permitirnos crear una vista que lo muestre de una forma adecuada a la estética de nuestro proyecto web.
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html'), 404
+
+el render_template 404.html deberá ser creado por el programador.
