@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PRT TEAM</title>
+</head>
+
+<body>
+    <h1>PRT TEAM</h1>
+    <h3>Los miembros son:
+    <ul>
+        {% for nombre in nombres %}
+            {%if nombre == nombres[0] %}
+                <li> <a href="{{url_for('perfil_hvera')}}"> {{nombre}} </a> </li>
+            {%elif nombre == nombres[1] %}
+                <li> <a href="{{url_for('perfil_maxi')}}"> {{nombre}} </a> </li>
+            {%elif nombre == nombres[2] %}
+                <li> <a href="{{url_for('perfil_edgarplank')}}"> {{nombre}} </a> </li>
+            {%elif nombre == nombres[3] %}
+                <li> <a href="{{url_for('perfil_djperrete')}}"> {{nombre}} </a> </li>
+            {%elif nombre == nombres[4] %}
+                <li> <a href="{{url_for('perfil_kiritsuna')}}"> {{nombre}} </a> </li>
+            {% else %}
+                <li> <a href="{{url_for('perfil_spynck')}}"> {{nombre}} </a></li>
+            {% endif %}    
+        {% endfor %}
+    </ul>
+    </h3>
+</body>
+
+</html>
