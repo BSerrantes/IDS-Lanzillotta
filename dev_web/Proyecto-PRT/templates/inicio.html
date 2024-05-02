@@ -3,12 +3,13 @@
 
 <head>
     <title>PRT TEAM</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 
 <body>
     <h1>PRT TEAM</h1>
     <h3>Los miembros son:
-    <ul>
+    <ul id="nombres">
         {% for nombre in nombres %}
             {%if nombre == nombres[0] %}
                 <li> <a href="{{url_for('perfil_hvera')}}"> {{nombre}} </a> </li>
@@ -28,6 +29,19 @@
     </h3>
 
     <p>Quiere ser miembro? <a href="{{url_for('form_registro')}}">Registrate</a></p>
+
+    <div>
+        <label for="texto1">Texto1:</label>
+        <input type="text" name="primer_str" id="texto1">
+        <br>
+        <label for="texto2">Texto2:</label>
+        <input type="text" name="segundo_str" id="texto2">
+        <br>
+        <button id="boton_concatenar">concatenar textos</button>
+    </div>
+
+    <script src="{{url_for('static', filename='js/script.js', _external=True)}}"></script>
+
 </body>
 
 </html>
