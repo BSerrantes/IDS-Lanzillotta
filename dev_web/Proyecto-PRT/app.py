@@ -3,9 +3,9 @@ from flask import Flask, url_for, render_template, request, redirect
 app = Flask(__name__)
 
 @app.route("/")
-def home():
+def inicio():
     lista_nombres = ["Hvera", "Maxi", "Edgarplank", "Dperrete", "Kiritsuna", "Spynck"]
-    return render_template("home.html", nombres=lista_nombres)
+    return render_template("inicio.html", nombres=lista_nombres)
 
 @app.route("/djperrete")
 def perfil_djperrete():
@@ -30,6 +30,26 @@ def perfil_kiritsuna():
 @app.route("/spynck")
 def perfil_spynck():
     return render_template("spynck.html")
+
+@app.route("/registro")
+def form_registro():
+    return render_template("registro.html")
+
+@app.route("/show")
+def show():
+    return render_template("show.html")
+
+@app.route("/registro", methods = ["GET", "POST"])
+def formulario():
+    if request.method == "POST":
+        nombre = request.form.get("fnombre")
+        return redirect(url_for("show", nombre=nombre))
+
+    return render_template("registro.html")
+
+@app.errorhandler(404)
+def page_not_foun(e):
+    return render_template("404.html")
 
 if __name__ == "__main__":
     app.run("127.0.0.1", port="8080", debug=True)
