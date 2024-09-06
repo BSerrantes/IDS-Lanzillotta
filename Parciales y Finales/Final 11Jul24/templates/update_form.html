@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{%block title%} IDS:Update Form {%endblock%}
+
+{%block body%}
+    <div>
+        <form action="{{url_for('edit_product', id=pr_id ,_external=True)}}" method="POST">
+            <label for="id_articulo"> ID_articulo:</label>
+            <input type="text" name="fid" id="art_id" value="{{art.id}}">
+            <br>
+            <label for="description"> Descripción:</label>
+            <input type="text" name="fdescription" id="p_description" value="{{art.description}}">
+            <br>
+            <label for="price">Precio:</label>
+            <input type="text" name="fprice" id="product_price" value="{{art.price}}">
+            <br>
+            <button type="submit"> Actualizar </button>
+        </form>
+    </div>
+{%endblock%}

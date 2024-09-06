@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+    {% block head %}
+    {% endblock %}
+
+    {% block body %}
+        <div>
+            <h1 id="datos_alumno">Este examen corresponde a "{{nombre}} {{apellido}}."</h1>
+            <p>Haga <a href="{{url_for('Recetas')}}">clik aquí</a> para continuar.</p>
+        </div>
+    {% endblock %}

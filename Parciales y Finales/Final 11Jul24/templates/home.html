@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%block title%}IDS::Home{%endblock%}
+
+{%block body%}
+    <div>
+        <p>Este examen pertenece a: </p>
+        <h1 id="my_name" onmouseover="changesizecolor()">{{name}} {{lastname}}</h1>
+        <p>Haga <a href="{{url_for('listado', _external=True)}}">click aquí</a> para continuar.</p>
+    </div>
+
+    <script src="{{url_for('static', filename='/js/script.js', _external=True)}}"></script>
+{%endblock%}

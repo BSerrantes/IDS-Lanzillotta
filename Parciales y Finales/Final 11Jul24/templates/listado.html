@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{%block title%}IDS::Listado{%endblock%}
+
+{%block body%}
+
+<h2>FINAL IDS</h2>
+
+<div>
+  <table>
+    <tr>
+      <th>Artículo</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    </tr>
+      {%for data in articulos%}
+      <tr>
+        <td>{{data['id']}}</td>
+        <td>{{data['description']}}</td>
+        <td>{{data['price']}}</td>
+        <td><label id="edit_btn"><a href="{{url_for('edit_product', id=data['id'] , _external=True)}}"> editar </a></label></td>
+        <td><label id="delete_btn"><a href="{{url_for('delete_product', product_id=data['id'], _external=True)}}">eliminar</a></label></td>
+      </tr>
+      {%endfor%}
+  
+    
+  </table>
+</div>
+
+<div id="create_btn">
+  <a href="{{url_for('formulario', _external=True)}}">Agregar nuevo producto.</a>
+</div>
+
+{%endblock%}
+

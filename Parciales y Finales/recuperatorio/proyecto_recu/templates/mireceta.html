@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+    {% block body %}
+    <ul>
+        {%for datos,valores in recetas[id].items()%}
+            {%if datos!=ingredientes%}
+                <li>{{datos | capitalize }}: <label id="valores_receta">{{valores}}</label> </li>
+            {% else %}
+
+            {% endif%}
+        {%endfor%}
+    </ul>
+    {% endblock %}

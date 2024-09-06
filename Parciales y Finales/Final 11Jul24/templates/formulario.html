@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{%block title%} IDS:Formulario {%endblock%}
+
+{%block body%}
+    <div>
+        <form action="{{url_for('formulario', _external=True)}}" method="post">
+            <label for="id_articulo"> ID_articulo:</label>
+            <input type="text" name="fid" id="art_id">
+            <br>
+            <label for="description"> Descripción:</label>
+            <input type="text" name="fdescription" id="p_description">
+            <br>
+            <label for="price">Precio:</label>
+            <input type="text" name="fprice" id="product_price">
+            <br>
+            <button type="submit"> Enviar </button>
+        </form>
+    </div>
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+    {% block body %}
+    <h1>Recetas disponibles:</h1>
+        <ul>
+            {% for nro_receta,receta in recetas.items() %}
+                <li id="nombre_recetas">{{receta['nombre']}}: <button type="button"> <a href="{{url_for('Mireceta', id= nro_receta ,_external=True )}}"> Ver </a> </button> </li>
+                <br>
+            {% endfor %}    
+        </ul>
+    {% endblock %}
